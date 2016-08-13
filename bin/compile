@@ -83,9 +83,9 @@ status "Cleaning up node-gyp and npm artifacts"
 rm -rf "$build_dir/.node-gyp"
 rm -rf "$build_dir/.npm"
 
-# status "Removing CREATE permissions for User model"
-# sed '42,47d' $build_dir/node_modules/loopback/common/models/user.json > $build_dir/node_modules/loopback/common/models/user.tmp
-# mv $build_dir/node_modules/loopback/common/models/user.tmp $build_dir/node_modules/loopback/common/models/user.json
+status "Removing CREATE permissions for User model"
+sed '42,47d' $build_dir/node_modules/loopback/common/models/user.json > $build_dir/node_modules/loopback/common/models/user.tmp
+mv $build_dir/node_modules/loopback/common/models/user.tmp $build_dir/node_modules/loopback/common/models/user.json
 
 # Update the PATH
 status "Building runtime environment"
